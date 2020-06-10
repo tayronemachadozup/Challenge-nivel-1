@@ -31,18 +31,18 @@
         </header>
         <section class="carousel">
             <div id="slideshow"></div>
-            <div class="carousel__next"><i class="fas fa-angle-right"></i></div>
-            <div class="carousel__prev"> <i class="fas fa-angle-left"></i></div>
+            <div class="carousel__next" onclick="plusSlides(1)"><i class="fas fa-angle-right"></i></div>
+            <div class="carousel__prev" onclick="plusSlides(-1)"> <i class="fas fa-angle-left"></i></div>
             
-            <div class="carousel__pointer">
-                <span class="carousel__pointer--dot"></span> 
-                <span class="carousel__pointer--dot"></span> 
-                <span class="carousel__pointer--dot"></span>
-               
-              </div>
+            
         </section>
-        
-        <!--<section class="content">
+        <div class="carousel__pointer">
+            <span class="carousel__pointer--dot"  onclick="currentSlide(1)"></span> 
+            <span class="carousel__pointer--dot" onclick="currentSlide(2)"></span> 
+            <span class="carousel__pointer--dot"onclick="currentSlide(3)"></span>
+           
+          </div>
+        <section class="content">
            <ul class="content__list">
                <li>Assista a seguir
                     <ul style="display: flex; justify-content: space-around;">
@@ -75,7 +75,7 @@
                <li>Filmes de suspense</li>
                <li>Séries adicionadas recentemente</li>
            </ul>       
-        </section>-->
+        </section>
         <script src="teste.js"></script>
         <script src="index.js"></script>
     </body>
