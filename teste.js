@@ -96,9 +96,7 @@ const movies = [
             "adult": false,
             "overview": "A história do expatriado americano Mickey Pearson, um homem que criou um império de marijuana altamente lucrativo em Londres. Quando começa a constar que ele está a tentar lucrar com os negócios para se poder reformar, desencadeiam-se conspirações, esquemas, suborno e chantagem, na tentativa de sabotar o seu domínio.",
             "poster_path": "\/isfhoWF9vnvqweEul2wtY4YBP2v.jpg"
-          },
-          {
-            "poster_path": "\/ 4fd677c3-e0ed-4bac-a08f-7c2b7a90d5fa._UR3000,600_SX1500_FMwebp_.webp"
           }
-                   
+          
+                         
 ]

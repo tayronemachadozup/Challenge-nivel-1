@@ -18,7 +18,6 @@ body{
     justify-content: space-around;
     align-items: center;
     padding: 10px 25px;
-    
     z-index:2;
 }
 
@@ -99,7 +98,6 @@ body{
 .carousel__slideshow{
     width: 100%;
     position: relative;
-    transform: translateX(-200%);
 }
 .carousel__slideshow__img{
     display: none;
@@ -110,7 +108,6 @@ body{
     vertical-align: middle;
     transition: color .3s ease-in-out;
 }
-
 
 .carousel__next, .carousel__prev{
     position: absolute;
@@ -124,12 +121,10 @@ body{
 }
 
 .carousel__pointer{
-   
     display: flex;
     align-items:flex-end;
     justify-content:center;
     padding: 10px;
-   
 }
 
 .carousel__pointer--dot{
@@ -143,26 +138,9 @@ body{
     
   }
 
-  .carousel__pointer--active{
+.carousel__pointer--active{
     background-color: #717171;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -171,12 +149,37 @@ body{
 .content{
     padding: 20px 0px 0px 50px; 
 }
-
-.content__list{
-    list-style: none;
+.content__title{
     color: #ffff;
-    font-size: 23px;
 }
+.content__list{
+    width: 100%;
+}
+
+.content__list__carousel{
+    list-style: none;
+    display: flex;
+    
+}
+
+.content__list__carousel__folder{
+    width: 290px;
+    height: 160px;
+    border-radius: 5px;
+    margin: 5px 10px 10px 0px;
+    flex: 1;
+}
+
+.img__forder{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.content__list__carousel__folder:hover{
+
+}
+
 
 @media (max-width: 767px) {
    

@@ -1,6 +1,11 @@
 const carouselElement = document.querySelector('#slideshow');
+const newContentElement = document.querySelector('#newContent');
+
 var slideIndex = 1;
 const IMG_URL = 'https://image.tmdb.org/t/p/w533_and_h300_bestv2/';
+
+const IMG_URL1 = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
+
 
 function createCarousel(arrMovies){
     const carousel = `
@@ -12,6 +17,23 @@ function createCarousel(arrMovies){
     `;
     carouselElement.innerHTML = carousel;
 }
+
+
+function getmovies(arrMovies){
+  const list = `
+  <ul class="content__list__carousel">
+      ${arrMovies.map(movie =>  `
+      <li class="content__list__carousel__folder"><img class ="img__forder" src="${IMG_URL1 + movie.poster_path}"></li>
+      `).join('')}
+  </ul>        
+  `;
+  newContentElement.innerHTML = list;
+}
+
+
+
+
+
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
@@ -37,5 +59,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+getmovies(movies);
 createCarousel(movies);
 showSlides(slideIndex);
