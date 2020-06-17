@@ -106,13 +106,14 @@ body{
 .carousel__img{
     width:100%;
     vertical-align: middle;
-    transition: color .3s ease-in-out;
+   
 }
 
 .carousel__next, .carousel__prev{
     position: absolute;
     top: 50%;
-    font-size: 25px;
+    font-size: 30px;
+    padding: 0px 10px 0px 10px;
     color: #ffff;
     cursor: pointer;
 }
@@ -159,7 +160,6 @@ body{
 .content__list__carousel{
     list-style: none;
     display: flex;
-    
 }
 
 .content__list__carousel__folder{
@@ -171,8 +171,10 @@ body{
 }
 
 .img__forder{
-    width: 100%;
-    height: 100%;
+    max-width:290px;
+    max-height:160px;
+    width: auto;
+    height: auto;
     border-radius: 5px;
 }
 
@@ -192,5 +194,12 @@ body{
 }
 
 @media(min-width: 980px) {
-    
+    #slideshow{
+        display: flex;
+        justify-content: center;
+        height: 300px;
+    }
+    .carousel__slideshow{
+        width: 80%;
+    }
 }

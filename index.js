@@ -8,7 +8,7 @@ var slideIndex = 1;
 const searchURL = 'https://api.themoviedb.org/3/search/multi?api_key=9c5c64f28ef6b06c9548ba6f6077905a&language=pt-BR&page=2&query=';
 
 
-const IMG_URL = 'https://image.tmdb.org/t/p/w533_and_h300_bestv2/';
+const IMG_URL = 'https://image.tmdb.org/t/p/w1920_and_h600_multi_faces';
 const IMG_URL1 = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
 
 
@@ -69,9 +69,10 @@ function searchValue() {
   });
 }
 
-function searchApi(inputValue) {
+function searchApi(type,inputValue) {
   const newURL = `${searchURL}${inputValue}`;
-
+  // colocar ifs para verificar de onde vem a busca de acordo com o type que vai ser colocado na chamada da função 
+  
   fetch(newURL)
     .then((res) => res.json())
     .then((data) => {
@@ -84,6 +85,7 @@ function searchApi(inputValue) {
 }
 
 
+
 function saveToStorage(arrName,data){
   localStorage.setItem(arrName, JSON.stringify(data));
 }
@@ -92,7 +94,8 @@ function getToStorage(arr){
   return JSON.parse(localStorage.getItem(arr));
 }
 
+
+createCarousel(foldersCarousel);
 searchValue();
 getmovies(movies);
-createCarousel(movies);
 showSlides(slideIndex);
