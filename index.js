@@ -17,7 +17,9 @@ function createCarousel(arrMovies) {
     <ul class="carousel__slideshow">
         ${arrMovies.map(movie => `
         <li class="carousel__slideshow__img"><img class ="carousel__img" src="${IMG_URL + movie.poster_path}"></li>
-        `).join('')}
+        `).join('')
+        
+      }
     </ul>        
     `;
   carouselElement.innerHTML = carousel;

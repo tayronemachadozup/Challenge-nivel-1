@@ -96,6 +96,67 @@ const movies = [
             "adult": false,
             "overview": "A história do expatriado americano Mickey Pearson, um homem que criou um império de marijuana altamente lucrativo em Londres. Quando começa a constar que ele está a tentar lucrar com os negócios para se poder reformar, desencadeiam-se conspirações, esquemas, suborno e chantagem, na tentativa de sabotar o seu domínio.",
             "poster_path": "\/isfhoWF9vnvqweEul2wtY4YBP2v.jpg"
+          },
+          {
+            "vote_count": 17,
+            "popularity": 5.19,
+            "id": 24198,
+            "video": false,
+            "media_type": "movie",
+            "vote_average": 2.1,
+            "title": "AVH: Alien vs. Hunter",
+            "release_date": "2007-12-18",
+            "original_language": "en",
+            "original_title": "AVH: Alien vs. Hunter",
+            "genre_ids": [
+              27,
+              878,
+              28
+            ],
+            "backdrop_path": null,
+            "adult": false,
+            "overview": "",
+            "poster_path": "\/46whh6JCDqRFxHfKssePScUvD8D.jpg"
+          },
+          {
+            "vote_count": 6,
+            "popularity": 4.665,
+            "id": 561859,
+            "video": true,
+            "media_type": "movie",
+            "vote_average": 4.5,
+            "title": "Alien Overlords",
+            "release_date": "2018-11-14",
+            "original_language": "en",
+            "original_title": "Alien Overlords",
+            "genre_ids": [
+              28,
+              878
+            ],
+            "backdrop_path": "\/2osX053v71I1Nc0qejnRiU64aMM.jpg",
+            "adult": false,
+            "overview": "",
+            "poster_path": "\/zDtn7lC2ugxWsre4JhdAXA3GTsM.jpg"
+          },
+          {
+            "original_name": "Pet Alien",
+            "genre_ids": [
+              35
+            ],
+            "media_type": "tv",
+            "name": "Pet Alien",
+            "popularity": 3.869,
+            "origin_country": [
+              "US"
+            ],
+            "vote_count": 3,
+            "first_air_date": "2005-01-23",
+            "backdrop_path": null,
+            "original_language": "en",
+            "id": 1717,
+            "vote_average": 4,
+            "overview": "",
+            "poster_path": "\/wjSRQBfnmUhJ40TCgRn4053N5DS.jpg"
           }
           
                          
