@@ -62,7 +62,7 @@ function currentSlide(n) {
 }
 
 
-function RenderContent(point,data) {
+function renderContent(point,data) {
   const list = `
   <ul class="content__list__carousel">
       ${data.results.map(movie => `
@@ -78,16 +78,19 @@ function renderEndpoint(element){
 }
 
 
-function searchValue() {
+function search() {
   inputElement.addEventListener("keypress", event => {
     let value = event.target.value.toLowerCase();
     
       if(event.which == 13){
-        //searchApi(value);
+        const url = generateMovieDBUrl('/search/multi?')+`&query=${value}`;
+        console.log(url);
+        requestApi('search-result',url);
+        window.location.href = './search/search.html';
+
     }
   });
 }
-
 
 //API
 function generateMovieDBUrl(path) {
@@ -114,7 +117,7 @@ function getWatchNext(){
    requestApi('Watch-Next',url);
    const data = getToStorage('Watch-Next');
      console.log('O arry esta vindo do watch next', data);
-   RenderContent(comingUpElement, data);
+   renderContent(comingUpElement, data);
 } 
 getWatchNext();
 
@@ -123,7 +126,7 @@ function getAmazonOriginals(){
   requestApi('Amazon-Originals',url);
   const data = getToStorage('Amazon-Originals');
   console.log('O arry esta vindo do amazon originais', data);
-  RenderContent(amazonOriginalsElement, data); 
+  renderContent(amazonOriginalsElement, data); 
 }
 getAmazonOriginals();
 
@@ -132,7 +135,7 @@ function getUpcoming(){
     requestApi('Upcoming',url);
   const data = getToStorage('Upcoming');
     console.log('O arry esta vindo do Upcoming', data);
-    RenderContent(moviesLikeElement, data); 
+    renderContent(moviesLikeElement, data); 
 }
 getUpcoming();
 
@@ -141,7 +144,7 @@ function getMoviesAdded(){
    requestApi('Movie-Added',url); 
    const data = getToStorage('Movie-Added');
    console.log('O arry esta vindo de movies added', data);
-   RenderContent(addedMoviesElement, data); 
+   renderContent(addedMoviesElement, data); 
 }
 getMoviesAdded();
 
@@ -154,7 +157,7 @@ function getSeriesAdded (){
    requestApi('Series-Added',url);
    const data = getToStorage('Series-Added');
    console.log('O arry esta vindo de series added', data);
-   RenderContent(addedSeriesElement, data); 
+   renderContent(addedSeriesElement, data); 
 }
 getSeriesAdded ();
 
@@ -169,8 +172,8 @@ function getToStorage(arr){
 
 
 createCarousel(foldersCarousel);
-searchValue();
-RenderContent();
+search();
+renderContent();
 showSlides(slideIndex);
 
 
