@@ -84,17 +84,16 @@ function search() {
     
       if(event.which == 13){
         const url = generateMovieDBUrl('/search/multi?')+`&query=${value}`;
-        console.log(url);
         requestApi('search-result',url);
-        window.location.href = './search/search.html';
-
+        //window.location.href = './search/search.html';
+        console.log(getToStorage('search-result'));
     }
   });
 }
 
 //API
 function generateMovieDBUrl(path) {
-  const url = `${MovieDbPath}/3${path}api_key=${ApiKEY}&page=2`;
+  const url = `${MovieDbPath}/3${path}api_key=${ApiKEY}&page=2&language=pt-BR`;
   return url;
 }
 
@@ -116,7 +115,7 @@ function getWatchNext(){
   const url = generateMovieDBUrl('/search/trending?');
    requestApi('Watch-Next',url);
    const data = getToStorage('Watch-Next');
-     console.log('O arry esta vindo do watch next', data);
+     console.log('O array esta vindo do watch next', data);
    renderContent(comingUpElement, data);
 } 
 getWatchNext();
@@ -125,7 +124,7 @@ function getAmazonOriginals(){
   const url = generateMovieDBUrl('/tv/on_the_air?');
   requestApi('Amazon-Originals',url);
   const data = getToStorage('Amazon-Originals');
-  console.log('O arry esta vindo do amazon originais', data);
+  console.log('O array esta vindo do amazon originais', data);
   renderContent(amazonOriginalsElement, data); 
 }
 getAmazonOriginals();
@@ -134,7 +133,7 @@ function getUpcoming(){
   const url = generateMovieDBUrl('/movie/upcoming?');
     requestApi('Upcoming',url);
   const data = getToStorage('Upcoming');
-    console.log('O arry esta vindo do Upcoming', data);
+    console.log('O array esta vindo do Upcoming', data);
     renderContent(moviesLikeElement, data); 
 }
 getUpcoming();
@@ -143,20 +142,25 @@ function getMoviesAdded(){
   const url = generateMovieDBUrl('/movie/popular?');
    requestApi('Movie-Added',url); 
    const data = getToStorage('Movie-Added');
-   console.log('O arry esta vindo de movies added', data);
+   console.log('O array esta vindo de movies added', data);
    renderContent(addedMoviesElement, data); 
 }
 getMoviesAdded();
 
 function getMoviesThriller(){
-  const url = '';
+  const url = generateMovieDBUrl('/discover/movie?with_genres=18&') ;
+  requestApi('Movie-Thriller',url);
+  const data = getToStorage('Movie-Thriller');
+  console.log('O array esta vindo de movie-Thriller', data);
+  renderContent(moviesThrillerElement, data);
 }
+getMoviesThriller();
 
 function getSeriesAdded (){
   const url = generateMovieDBUrl('/tv/airing_today?');
    requestApi('Series-Added',url);
    const data = getToStorage('Series-Added');
-   console.log('O arry esta vindo de series added', data);
+   console.log('O array esta vindo de series added', data);
    renderContent(addedSeriesElement, data); 
 }
 getSeriesAdded ();
@@ -195,9 +199,9 @@ showSlides(slideIndex);
   // https://api.themoviedb.org/3/movie/popular?api_key=9c5c64f28ef6b06c9548ba6f6077905a&language=pt-BR&page=2 ok
 
 //Filmes de suspense
-  // https://api.themoviedb.org/3/discover/movie?with_genres=18?api_key=9c5c64f28ef6b06c9548ba6f6077905a&apage=2 n funfa
+  // https://api.themoviedb.org/3/discover/movie?with_genres=18&api_key=9c5c64f28ef6b06c9548ba6f6077905a&apage=2 ok
   
- 
+
 //Séries adicionadas recentemente
   // https://api.themoviedb.org/3/tv/airing_today?api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2 ok
 
