@@ -39,3 +39,5 @@ const foldersCarousel =[
         "poster_path": "/r2NcIZ1FPMlxCty3vRITVTgGNVS.jpg"
     }
 ]
+
+const

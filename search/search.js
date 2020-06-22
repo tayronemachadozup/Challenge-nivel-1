@@ -1,7 +1,7 @@
 const resultsElement = document.querySelector('#search-results');
 const arrResults = getToStorage('search-result');
 
-console.log(arrResults);
+//console.log(arrResults);
 
 function renderResults(data){
    const result = `
