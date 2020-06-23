@@ -5,7 +5,7 @@ const comingUpElement = document.querySelector('#coming-up');
 const amazonOriginalsElement = document.querySelector('#amazon-originals');
 const moviesLikeElement = document.querySelector('#movies-like');
 const addedMoviesElement =document.querySelector('#movies-added');
-const moviesThrillerElement = document.querySelector('#movie-thriller');
+const moviesThrillerElement = document.querySelector('#thriller-movie');
 const addedSeriesElement =document.querySelector('#series-added');
 
 var slideIndex = 1;
@@ -28,7 +28,6 @@ function createCarousel(arrMovies) {
         ${arrMovies.map(movie => `
         <li class="carousel__slideshow__img"><img class ="carousel__img" src="${IMG_URL + movie.poster_path}"></li>
         `).join('')
-        
       }
     </ul>        
     `;
@@ -149,9 +148,9 @@ getMoviesAdded();
 
 function getMoviesThriller(){
   const url = generateMovieDBUrl('/discover/movie?with_genres=18&') ;
-  requestApi('Movie-Thriller',url);
-  const data = getToStorage('Movie-Thriller');
-  console.log('O array esta vindo de movie-Thriller', data);
+  requestApi('thriller-movie',url);
+  const data = getToStorage('thriller-movie');
+  console.log('O array esta vindo de thriller-movie', data);
   renderContent(moviesThrillerElement, data);
 }
 getMoviesThriller();
