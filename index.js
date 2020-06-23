@@ -10,9 +10,9 @@ const addedSeriesElement =document.querySelector('#series-added');
 
 var slideIndex = 1;
 
-function reload(){
-  document.location.reload(true);
-}
+//function reload(){
+ // document.location.reload(true);
+//}
 
 function createCarousel(arrMovies) {
   const carousel = `
@@ -106,7 +106,7 @@ function getMoviesThriller(){
   renderContent(moviesThrillerElement, data);
 }
 
-function getSeriesAdded (){
+function getSeriesAdded(){
   const url = generateMovieDBUrl('/tv/airing_today?');
    requestApi('Series-Added',url);
    const data = getToStorage('Series-Added');

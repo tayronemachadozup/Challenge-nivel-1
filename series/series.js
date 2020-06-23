@@ -1,20 +1,13 @@
-const comingUpElement = document.querySelector('#coming-up'); // /tv/popular 
+const comingUpElement = document.querySelector('#coming-up'); 
 const amazonOriginalsElement = document.querySelector('#amazon-originals');
-const addedSeriesElement = document.querySelector('#series-added'); // /tv/latest
-const bestSeriesElement = document.querySelector('#best-series'); //  /tv/top_rated 
-const thrillerSeriesElement =document.querySelector('#thriller-series'); //https://api.themoviedb.org/3/discover/tv?with_genres=9648&api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2
-const dramaSeriesElement = document.querySelector('#drama-series'); //https://api.themoviedb.org/3/discover/tv?with_genres=18&api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2
+const addedSeriesElement = document.querySelector('#series-added'); 
+const bestSeriesElement = document.querySelector('#best-series'); 
+const thrillerSeriesElement = document.querySelector('#thriller-series');
+const dramaSeriesElement = document.querySelector('#drama-series'); 
 
-function cleanLocalStorage(){
-  localStorage.clear();
-}
-
-//https://api.themoviedb.org/3/tv/latest?&api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2
-//https://api.themoviedb.org/3/tv/on_the_air?&api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2
-//https://api.themoviedb.org/3/tv/top_rated?&api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2
-
-//https://api.themoviedb.org/3/tv/airing_today?&api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2
-//url = "https://api.themoviedb.org/3/tv/airing_today?api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2&language=pt-BR"
+//function cleanLocalStorage(){
+ // localStorage.clear();
+//}
 
 function getUpcoming(){
     const url = generateMovieDBUrl('/tv/popular?');
@@ -34,10 +27,10 @@ function getAmazonOriginals(){
 
 function getSeriesAdded(){
     const url = generateMovieDBUrl('/tv/airing_today?');
-     requestApi('series-added',url);
-     const data = getToStorage('serie-adicionada');
-     console.log('O array esta vindo de series added', data);
-     renderContent(addedSeriesElement, data); 
+    requestApi('series-added',url);
+    const data = getToStorage('series-added');
+    console.log('O array esta vindo de series added', data);
+    renderContent(addedSeriesElement, data); 
 }
 
 function getBestSeries(){
@@ -56,7 +49,7 @@ function getThrillerSeries(){
     renderContent(thrillerSeriesElement, data);
 }
   
-function getDramaSeries (){
+function getDramaSeries(){
     const url = generateMovieDBUrl('/discover/tv?with_genres=18&');
     requestApi('drama-series',url);
     const data = getToStorage('drama-series');
