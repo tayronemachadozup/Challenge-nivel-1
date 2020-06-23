@@ -31,8 +31,8 @@
         </header>
         <section class="carousel">
             <div id="slideshow"></div>
-            <div class="carousel__next" onclick="plusSlides(1)"><i class="fas fa-angle-right"></i></div>
-            <div class="carousel__prev" onclick="plusSlides(-1)"> <i class="fas fa-angle-left"></i></div>
+            <div class="next" onclick="plusSlides(1)"><i class="fas fa-angle-right"></i></div>
+            <div class="prev" onclick="plusSlides(-1)"> <i class="fas fa-angle-left"></i></div>
         </section>
         <div class="carousel__pointer">
             <span class="carousel__pointer--dot" onclick="currentSlide(1)"></span> 
@@ -55,11 +55,13 @@
             </section>
             <h2 class="content__title">Séries de suspense</h2>
             <section id = "thriller-series" class="content__list">
-
             </section>
             <h2 class="content__title">Séries de drama</h2>
             <section id ="drama-series" class="content__list">
             </section>
         </section>
+        <script src="../urlsCarousel.js"></script>
+        <script src="../api.js"></script>
+        <script src="series.js"></script> 
     </body>
 </html>

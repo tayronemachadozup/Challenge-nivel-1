@@ -10,17 +10,9 @@ const addedSeriesElement =document.querySelector('#series-added');
 
 var slideIndex = 1;
 
-//API PATCH
-const ApiKEY = '9c5c64f28ef6b06c9548ba6f6077905a';
-const MovieDbPath = 'https://api.themoviedb.org';
-
-
-//const searchURL = 'https://api.themoviedb.org/3/search/multi?api_key=9c5c64f28ef6b06c9548ba6f6077905a&language=pt-BR&page=2&query=';
-
-// URLS IMAGENS 
-const IMG_URL = 'https://image.tmdb.org/t/p/w1920_and_h600_multi_faces';
-const IMG_URL1 = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
-
+function reload(){
+  document.location.reload(true);
+}
 
 function createCarousel(arrMovies) {
   const carousel = `
@@ -33,8 +25,6 @@ function createCarousel(arrMovies) {
     `;
   carouselElement.innerHTML = carousel;
 }
-
-
 
 function showSlides(n) {
   let i;
@@ -61,22 +51,6 @@ function currentSlide(n) {
 }
 
 
-function renderContent(point,data) {
-  const list = `
-  <ul class="content__list__carousel">
-      ${data.results.map(movie => `
-      <li class="content__list__carousel__folder"><img class ="img__forder" src="${IMG_URL1 + movie.poster_path}"></li>
-      `).join('')}
-  </ul>        
-  `;
-  renderEndpoint(point).innerHTML = list;
-}
-
-function renderEndpoint(element){
-  return element;
-}
-
-
 function search() {
   inputElement.addEventListener("keypress", event => {
     let value = event.target.value.toLowerCase();
@@ -90,26 +64,8 @@ function search() {
   });
 }
 
-//API
-function generateMovieDBUrl(path) {
-  const url = `${MovieDbPath}/3${path}api_key=${ApiKEY}&page=2&language=pt-BR`;
-  return url;
-}
-
-function requestApi(type,url) {
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      saveToStorage(type,data);
-    })
-    .catch((err) => {
-      console.log('Erro:', err);
-    });
-
-}
 
 //API Transitions
-
 function getWatchNext(){
   const url = generateMovieDBUrl('/search/trending?');
    requestApi('Watch-Next',url);
@@ -117,7 +73,6 @@ function getWatchNext(){
      console.log('O array esta vindo do watch next', data);
    renderContent(comingUpElement, data);
 } 
-getWatchNext();
 
 function getAmazonOriginals(){
   const url = generateMovieDBUrl('/tv/on_the_air?');
@@ -126,7 +81,6 @@ function getAmazonOriginals(){
   console.log('O array esta vindo do amazon originais', data);
   renderContent(amazonOriginalsElement, data); 
 }
-getAmazonOriginals();
 
 function getUpcoming(){
   const url = generateMovieDBUrl('/movie/upcoming?');
@@ -135,7 +89,6 @@ function getUpcoming(){
     console.log('O array esta vindo do Upcoming', data);
     renderContent(moviesLikeElement, data); 
 }
-getUpcoming();
 
 function getMoviesAdded(){
   const url = generateMovieDBUrl('/movie/popular?');
@@ -144,7 +97,6 @@ function getMoviesAdded(){
    console.log('O array esta vindo de movies added', data);
    renderContent(addedMoviesElement, data); 
 }
-getMoviesAdded();
 
 function getMoviesThriller(){
   const url = generateMovieDBUrl('/discover/movie?with_genres=18&') ;
@@ -153,7 +105,6 @@ function getMoviesThriller(){
   console.log('O array esta vindo de thriller-movie', data);
   renderContent(moviesThrillerElement, data);
 }
-getMoviesThriller();
 
 function getSeriesAdded (){
   const url = generateMovieDBUrl('/tv/airing_today?');
@@ -162,57 +113,21 @@ function getSeriesAdded (){
    console.log('O array esta vindo de series added', data);
    renderContent(addedSeriesElement, data); 
 }
+
+
+
+
+//getters
+getWatchNext();
+getAmazonOriginals();
+getUpcoming();
+getMoviesAdded();
+getMoviesThriller();
 getSeriesAdded ();
-
-
-function saveToStorage(arrName,data){
-  localStorage.setItem(arrName, JSON.stringify(data));
-}
-  
-function getToStorage(arr){
-  return JSON.parse(localStorage.getItem(arr));
-}
-
 
 createCarousel(foldersCarousel);
 search();
 renderContent();
 showSlides(slideIndex);
+reload();
 
-
-
-
-
-
-
-//Assista a seguir
-  // https://api.themoviedb.org/3/search/trending?api_key=9c5c64f28ef6b06c9548ba6f6077905a&language=pt-BR&page=2   ok
-
-// Séries Amazon Originals e exclusivas
-  // https://api.themoviedb.org/3/tv/on_the_air?api_key=9c5c64f28ef6b06c9548ba6f6077905a&language=pt-BR&page=2 ok
-
-//Filmes que achamos que você vai curtir  
-  // https://api.themoviedb.org/3/movie/upcoming?api_key=9c5c64f28ef6b06c9548ba6f6077905a&language=pt-BR&page=2 ok
-
-//Filmes adicionados recentemente  
-  // https://api.themoviedb.org/3/movie/popular?api_key=9c5c64f28ef6b06c9548ba6f6077905a&language=pt-BR&page=2 ok
-
-//Filmes de suspense
-  // https://api.themoviedb.org/3/discover/movie?with_genres=18&api_key=9c5c64f28ef6b06c9548ba6f6077905a&apage=2 ok
-  
-
-//Séries adicionadas recentemente
-  // https://api.themoviedb.org/3/tv/airing_today?api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2 ok
-
-
-
-/*fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      saveToStorage('search-result', data);
-      window.location.href = './search/search.html'
-    })
-    .catch((err) => {
-      console.log('Erro:', err)
-    });*/
