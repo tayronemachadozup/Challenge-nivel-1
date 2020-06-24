@@ -10,51 +10,27 @@ const dramaSeriesElement = document.querySelector('#drama-series');
 //}
 
 function getUpcoming(){
-    const url = generateMovieDBUrl('/tv/popular?');
-    requestApi('series-coming-up',url);
-    const data = getToStorage('series-coming-up');
-    console.log('O array esta vindo do Upcoming', data);
-    renderContent(comingUpElement, data); 
+    handleRequest('/tv/popular?','series-coming-up',comingUpElement);
 }
 
 function getAmazonOriginals(){
-    const url = generateMovieDBUrl('/tv/on_the_air?');
-    requestApi('series-amazon-originals',url);
-    const data = getToStorage('series-amazon-originals');
-    console.log('O array esta vindo de series amazon originais', data);
-    renderContent(amazonOriginalsElement, data); 
+    handleRequest('/tv/on_the_air?','series-amazon-originals',amazonOriginalsElement);
 }
 
 function getSeriesAdded(){
-    const url = generateMovieDBUrl('/tv/airing_today?');
-    requestApi('series-added',url);
-    const data = getToStorage('series-added');
-    console.log('O array esta vindo de series added', data);
-    renderContent(addedSeriesElement, data); 
+    handleRequest('/tv/airing_today?','series-added',addedSeriesElement);
 }
 
 function getBestSeries(){
-    const url = generateMovieDBUrl('/tv/top_rated?');
-    requestApi('best-series',url);
-    const data = getToStorage('best-series');
-    console.log('O array esta vindo de best-series', data);
-    renderContent(bestSeriesElement, data); 
+    handleRequest('/tv/top_rated?','best-series',bestSeriesElement);
 }
 
 function getThrillerSeries(){
-    const url = generateMovieDBUrl('/discover/tv?with_genres=9648&') ;
-    requestApi('thriller-series',url);
-    const data = getToStorage('thriller-series');
-    console.log('O array esta vindo de thriller-series', data);
-    renderContent(thrillerSeriesElement, data);
+    handleRequest('/discover/tv?with_genres=9648&','thriller-series',thrillerSeriesElement);
 }
   
 function getDramaSeries(){
-    const url = generateMovieDBUrl('/discover/tv?with_genres=18&');
-    requestApi('drama-series',url);
-    const data = getToStorage('drama-series');
-    console.log('O array esta vindo de drama-series', data);
-    renderContent(dramaSeriesElement, data); 
+    handleRequest('/discover/tv?with_genres=18&','drama-series',dramaSeriesElement);
 }
 
 

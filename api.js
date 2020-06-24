@@ -13,35 +13,48 @@ function generateMovieDBUrl(path) {
   }
   
 function requestApi(type,url) {
-  fetch(url)
+  return fetch(url)
     .then((res) => res.json())
     .then((data) => {
+      console.log('request api', data);
       saveToStorage(type,data);
     })
     .catch((err) => {
-      console.log('Erro:', err);
+      console.log('Error:', err);
     });
 }
 
 function renderContent(point,data) {
-    const list = `
+  console.log('render content', data);
+  const list = `
     <ul class="content__list__carousel">
         ${data.results.map(movie => `
-        <li class="content__list__carousel__folder"><img class ="img__forder" src="${IMG_URL1 + movie.poster_path}"></li>
+        <li class="content__list__carousel__folder"><img class ="img__folder" src="${IMG_URL1 + movie.poster_path}"></li>
         `).join('')}
     </ul>        
-    `;
-    renderEndpoint(point).innerHTML = list;
+  `;
+  renderEndpoint(point).innerHTML = list;
 }
   
 function renderEndpoint(element){
     return element;
 }
- 
+
+async function handleRequest(path,type,element){
+  let data = getToStorage(type);
+  if (!data) {
+    const url = generateMovieDBUrl(path);
+    await requestApi(type,url);
+    data = getToStorage(type);
+}
+  renderContent(element, data); 
+}
+
+
 function saveToStorage(arrName,data){
-    localStorage.setItem(arrName, JSON.stringify(data));
+  localStorage.setItem(arrName, JSON.stringify(data));
 }
     
 function getToStorage(arr){
-    return JSON.parse(localStorage.getItem(arr));
+  return JSON.parse(localStorage.getItem(arr));
 }

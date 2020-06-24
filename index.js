@@ -50,7 +50,6 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
-
 function search() {
   inputElement.addEventListener("keypress", event => {
     let value = event.target.value.toLowerCase();
@@ -64,57 +63,30 @@ function search() {
   });
 }
 
-
 //API Transitions
 function getWatchNext(){
-  const url = generateMovieDBUrl('/search/trending?');
-   requestApi('Watch-Next',url);
-   const data = getToStorage('Watch-Next');
-     console.log('O array esta vindo do watch next', data);
-   renderContent(comingUpElement, data);
+  handleRequest('/search/trending?','Watch-Next',comingUpElement);
 } 
 
 function getAmazonOriginals(){
-  const url = generateMovieDBUrl('/tv/on_the_air?');
-  requestApi('Amazon-Originals',url);
-  const data = getToStorage('Amazon-Originals');
-  console.log('O array esta vindo do amazon originais', data);
-  renderContent(amazonOriginalsElement, data); 
+  handleRequest('/tv/on_the_air?','Amazon-Originals',amazonOriginalsElement);
 }
 
 function getUpcoming(){
-  const url = generateMovieDBUrl('/movie/upcoming?');
-    requestApi('Upcoming',url);
-  const data = getToStorage('Upcoming');
-    console.log('O array esta vindo do Upcoming', data);
-    renderContent(moviesLikeElement, data); 
+  handleRequest('/movie/upcoming?','Upcoming',moviesLikeElement);
 }
 
 function getMoviesAdded(){
-  const url = generateMovieDBUrl('/movie/popular?');
-   requestApi('Movie-Added',url); 
-   const data = getToStorage('Movie-Added');
-   console.log('O array esta vindo de movies added', data);
-   renderContent(addedMoviesElement, data); 
+  handleRequest('/movie/popular?','Movie-Added',addedMoviesElement);
 }
 
 function getMoviesThriller(){
-  const url = generateMovieDBUrl('/discover/movie?with_genres=18&') ;
-  requestApi('thriller-movie',url);
-  const data = getToStorage('thriller-movie');
-  console.log('O array esta vindo de thriller-movie', data);
-  renderContent(moviesThrillerElement, data);
+  handleRequest('/discover/movie?with_genres=18&','thriller-movie',moviesThrillerElement);
 }
 
 function getSeriesAdded(){
-  const url = generateMovieDBUrl('/tv/airing_today?');
-   requestApi('Series-Added',url);
-   const data = getToStorage('Series-Added');
-   console.log('O array esta vindo de series added', data);
-   renderContent(addedSeriesElement, data); 
+  handleRequest('/tv/airing_today?','Series-Added',addedSeriesElement);
 }
-
-
 
 
 //getters
