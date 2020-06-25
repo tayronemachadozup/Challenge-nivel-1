@@ -4,13 +4,13 @@ const MovieDbPath = 'https://api.themoviedb.org';
 
 // URLS IMAGENS 
 const IMG_URL = 'https://image.tmdb.org/t/p/w1920_and_h600_multi_faces';
-const IMG_URL1 = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
+const IMG_URL_List = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
 
-//API
+//API URL
 function generateMovieDBUrl(path) {
-    const url = `${MovieDbPath}/3${path}api_key=${ApiKEY}&page=2&language=pt-BR`;
-    return url;
-  }
+  const url = `${MovieDbPath}/3${path}api_key=${ApiKEY}&page=2&language=pt-BR`;
+  return url;
+}
   
 function requestApi(type,url) {
   return fetch(url)
@@ -25,11 +25,11 @@ function requestApi(type,url) {
 }
 
 function renderContent(point,data) {
-  console.log('render content', data);
+  //console.log('render content', data);
   const list = `
     <ul class="content__list__carousel">
         ${data.results.map(movie => `
-        <li class="content__list__carousel__folder"><img class ="img__folder" src="${IMG_URL1 + movie.poster_path}"></li>
+        <li class="content__list__carousel__folder"><img class ="img__folder" src="${IMG_URL_List + movie.poster_path}"></li>
         `).join('')}
     </ul>        
   `;
@@ -41,20 +41,24 @@ function renderEndpoint(element){
 }
 
 async function handleRequest(path,type,element){
-  let data = getToStorage(type);
-  if (!data) {
-    const url = generateMovieDBUrl(path);
-    await requestApi(type,url);
-    data = getToStorage(type);
+  try{
+    let data = getToStorage(type);
+    if (!data) {
+      const url = generateMovieDBUrl(path);
+      await requestApi(type,url);
+      data = getToStorage(type);
+      console.log('não exite');
+    }
+    renderContent(element, data); 
+  }
+  catch(err){
+  console.log(err.msg);
+  }
 }
-  renderContent(element, data); 
-}
-
-
 function saveToStorage(arrName,data){
   localStorage.setItem(arrName, JSON.stringify(data));
 }
     
-function getToStorage(arr){
-  return JSON.parse(localStorage.getItem(arr));
+function getToStorage(arrName){
+  return JSON.parse(localStorage.getItem(arrName));
 }

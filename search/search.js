@@ -1,24 +1,19 @@
 const resultsElement = document.querySelector('#search-results');
+
 const arrResults = getToStorage('search-result');
 
-//console.log(arrResults);
+console.log('foi chamado', arrResults);
 
-function renderResults(data){
-   const result = `
-    <ul class="search__results__list">
-        ${data.results.map(movie => `
-        <li class="search__results__list__items"><img class ="img__forder" src="${IMG_URL1 + movie.poster_path}"></li></li>
-        
+function renderResults(){
+    const data = getToStorage('search-result');
+    console.log(' Resultados do array que a search vai pegar :',data);
+    const results = `
+        <ul class="search__results__list">
+            ${data.results.map(movie => `
+            <li class="search__results__list__items"><img class ="img__folder" src="${IMG_URL_List + movie.poster_path}"></li>
     ` ).join('')}    
    `
-   resultsElement.innerHTML = result;
+   resultsElement.innerHTML = results;
 }
 
-
-function getToStorage(arr){
-    return JSON.parse(localStorage.getItem(arr));
-}
-
-
-
-renderResults(arrResults);
+renderResults();

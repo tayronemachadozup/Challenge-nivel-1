@@ -10,10 +10,6 @@ const addedSeriesElement =document.querySelector('#series-added');
 
 var slideIndex = 1;
 
-//function reload(){
- // document.location.reload(true);
-//}
-
 function createCarousel(arrMovies) {
   const carousel = `
     <ul class="carousel__slideshow">
@@ -51,14 +47,18 @@ function currentSlide(n) {
 }
 
 function search() {
+  let arrSearch = getToStorage('search-result');
   inputElement.addEventListener("keypress", event => {
     let value = event.target.value.toLowerCase();
-    
-      if(event.which == 13){
-        const url = generateMovieDBUrl('/search/multi?')+`&query=${value}`;
-        requestApi('search-result',url);
-        //window.location.href = './search/search.html';
-        console.log(getToStorage('search-result'));
+    if(event.which == 13){
+      const url = generateMovieDBUrl('/search/multi?')+`&query=${value}`;
+      if(arrSearch){
+        localStorage.removeItem('search-result');
+        console.log('Foi apagado');
+      }
+      console.log('O array não exites e passou na Verificação');
+      requestApi('search-result',url);
+      //window.location.href = './search/search.html';
     }
   });
 }
@@ -99,7 +99,6 @@ getSeriesAdded ();
 
 createCarousel(foldersCarousel);
 search();
-renderContent();
 showSlides(slideIndex);
-reload();
+
 
