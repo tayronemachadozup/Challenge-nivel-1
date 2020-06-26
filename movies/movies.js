@@ -1,9 +1,12 @@
+const carouselElement = document.querySelector('#slideshow');
+
 const comingUpElement = document.querySelector('#movies-coming-up');
 const amazonOriginalsElement = document.querySelector('#movies-amazon-originals'); 
 const addedMoviesElement = document.querySelector('#movies-added'); 
 const bestMoviesElement = document.querySelector('#best-movies');
 const thrillerMoviesElement = document.querySelector('#thriller-movies');
 const dramaMoviesElement = document.querySelector('#drama-movies');  
+
 
 function getUpcoming(){
     handleRequest('/movie/upcoming?','movies-coming-up',comingUpElement);
@@ -37,3 +40,6 @@ getMoviesAdded();
 getBestMovies();  
 getThrillerMovies();
 getDramaMovies();
+
+
+renderCarousel(moviesCarousel,carouselElement);

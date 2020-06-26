@@ -1,3 +1,5 @@
+const carouselElement = document.querySelector('#slideshow');
+
 const comingUpElement = document.querySelector('#coming-up'); 
 const amazonOriginalsElement = document.querySelector('#amazon-originals');
 const addedSeriesElement = document.querySelector('#series-added'); 
@@ -5,9 +7,6 @@ const bestSeriesElement = document.querySelector('#best-series');
 const thrillerSeriesElement = document.querySelector('#thriller-series');
 const dramaSeriesElement = document.querySelector('#drama-series'); 
 
-//function cleanLocalStorage(){
- // localStorage.clear();
-//}
 
 function getUpcoming(){
     handleRequest('/tv/popular?','series-coming-up',comingUpElement);
@@ -42,6 +41,5 @@ getBestSeries();
 getThrillerSeries();
 getDramaSeries();
 
-
+renderCarousel(seriesCarousel,carouselElement);
   
-//cleanLocalStorage();

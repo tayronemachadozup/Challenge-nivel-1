@@ -10,18 +10,6 @@ const addedSeriesElement =document.querySelector('#series-added');
 
 var slideIndex = 1;
 
-function createCarousel(arrMovies) {
-  const carousel = `
-    <ul class="carousel__slideshow">
-        ${arrMovies.map(movie => `
-        <li class="carousel__slideshow__img"><img class ="carousel__img" src="${IMG_URL + movie.poster_path}"></li>
-        `).join('')
-      }
-    </ul>        
-    `;
-  carouselElement.innerHTML = carousel;
-}
-
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("carousel__slideshow__img");
@@ -97,7 +85,7 @@ getMoviesAdded();
 getMoviesThriller();
 getSeriesAdded ();
 
-createCarousel(foldersCarousel);
+renderCarousel(indexCarousel,carouselElement);
 search();
 showSlides(slideIndex);
 

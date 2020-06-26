@@ -55,6 +55,21 @@ async function handleRequest(path,type,element){
   console.log(err.msg);
   }
 }
+
+function renderCarousel(arrMovies,element) {
+  const carousel = `
+    <ul class="carousel__slideshow">
+        ${arrMovies.map(movie => `
+        <li class="carousel__slideshow__img"><img class ="carousel__img" src="${IMG_URL + movie.poster_path}"></li>
+        `).join('')
+      }
+    </ul>        
+    `;
+    element.innerHTML = carousel;
+}
+
+
+
 function saveToStorage(arrName,data){
   localStorage.setItem(arrName, JSON.stringify(data));
 }

@@ -1,3 +1,5 @@
+const carouselElement = document.querySelector('#slideshow');
+
 const amazonOriginalsElement = document.querySelector('#childish-amazon-originals'); 
 const bestMoviesElement = document.querySelector('#childish-best-movies');
 const actionMoviesElement = document.querySelector('#childish-action-movies');  

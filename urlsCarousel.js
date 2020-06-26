@@ -1,4 +1,4 @@
-const foldersCarousel =[
+const indexCarousel =[
     {
         "poster_path": "/5GISMqlRXMEyBrgEqyvhaMMuQmJ.jpg"
     }, 
@@ -25,7 +25,7 @@ const foldersCarousel =[
     }
 ]
 
-const foldersSeries = [
+const seriesCarousel = [
     {
         "poster_path": "/mK286PAkhgLJqk5cO0BCmFLkNE7.jpg"
     },
@@ -37,7 +37,7 @@ const foldersSeries = [
     }
 ]
 
-const foldersMovies = [
+const moviesCarousel = [
     {
         "poster_path": "/mn9k8zapebAbCqsiKf24juhXjjx.jpg"
     },
@@ -49,7 +49,7 @@ const foldersMovies = [
     }
 ]
 
-const foldersChildish = [
+const childishCarousel = [
     {
         "poster_path": "/6LfVuZBiOOCtqch5Ukspjb9y0EB.jpg"
     },
