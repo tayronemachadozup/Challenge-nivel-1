@@ -2,7 +2,7 @@ const resultsElement = document.querySelector('#search-results');
 
 const arrResults = getToStorage('search-result');
 
-console.log('foi chamado', arrResults);
+console.log('Foi chamado', arrResults);
 
 function renderResults(){
     const data = getToStorage('search-result');

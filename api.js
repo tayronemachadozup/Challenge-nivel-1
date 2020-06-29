@@ -12,12 +12,15 @@ function generateMovieDBUrl(path) {
   return url;
 }
   
-function requestApi(type,url) {
+function requestApi(type,url,callback) {
   return fetch(url)
     .then((res) => res.json())
     .then((data) => {
       console.log('request api', data);
       saveToStorage(type,data);
+      if(callback){
+        callback();
+      }
     })
     .catch((err) => {
       console.log('Error:', err);
@@ -25,7 +28,6 @@ function requestApi(type,url) {
 }
 
 function renderContent(point,data) {
-  //console.log('render content', data);
   const list = `
     <ul class="content__list__carousel">
         ${data.results.map(movie => `
@@ -47,7 +49,6 @@ async function handleRequest(path,type,element){
       const url = generateMovieDBUrl(path);
       await requestApi(type,url);
       data = getToStorage(type);
-      console.log('não exite');
     }
     renderContent(element, data); 
   }

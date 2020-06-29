@@ -148,47 +148,36 @@ body{
     padding: 20px 0px 0px 50px; 
 }
 .content__title{
-    
+    padding: 20px 0px 0px 50px; 
     color: #ffff;
 }
 .content__list{
     padding: 20px 0px 0px 50px; 
     position: relative;
     display: flex;
-    width: 100%;
-    /*overflow-x: scroll;*/
-  
+    width: 100%; 
 }
 
 .content__list__carousel{
     list-style: none;
     display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
 .content__list__carousel__folder{
-    width: 283px;
-    height: 160px;
+    min-width: 220px;
+    height: auto;
     border-radius: 5px;
     margin: 5px 10px 10px 0px;
-    flex: 1;
     background-color: black;
 }
 
 .img__folder{
-    width: 100%;
     height: 100%;
+    width: 220px;
     border-radius: 5px;
 }
-
-.scroll__next{
-    transform: translate3d(-1200px,0,0);
-    animation-duration: 6s;
-}
-.scroll__prev{
-    transform: translate3d(0,200px,0);
-    animation-duration: 6s;
-}
-
 
 
 .content__list__carousel__folder:hover{

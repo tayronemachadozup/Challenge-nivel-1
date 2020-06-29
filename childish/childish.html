@@ -40,32 +40,49 @@
             <span class="carousel__pointer--dot" onclick="currentSlide(3)"></span>
         </div>
 
-        <section class="content">
+        <section class="row">
             <h2 class="content__title">Séries Amazon Originals para crianças</h2>
-            <section id= "childish-amazon-originals" class="content__list">
-
+            <section id= "childish-amazon-originals" class="content content__list">
             </section>
-            <h2 class="content__title">Melhores filmes</h2>
-            <section id= "childish-best-movies"class="content__list">
-
-            </section>
-            <h2 class="content__title">Ação e aventura</h2>
-            <section id= "childish-action-movies" class="content__list">
-
-            </section>
-            <h2 class="content__title">Séries educativas</h2>
-            <section id= "childish-educational-series" class="content__list">
-
-            </section>
-            <h2 class="content__title">Filmes e séries para crianças mais velhas</h2>
-            <section id= "childish-movies-series" class="content__list">
-        
-            </section>
-            <h2 class="content__title">Animações</h2>
-            <section id="childish-animations" class="content__list">
-
-            </section>
+            <div class="next" onclick="scrollPrev()"><i class="fas fa-angle-right"></i></div>
+            <div class="prev" onclick="scrollPrev()"> <i class="fas fa-angle-left"></i></div>
         </section>
+        <section class="row">
+            <h2 class="content__title">Melhores filmes</h2>
+            <section id= "childish-best-movies"class="content content__list">
+            </section>
+            <div class="next" onclick="scrollPrev()"><i class="fas fa-angle-right"></i></div>
+            <div class="prev" onclick="scrollPrev()"> <i class="fas fa-angle-left"></i></div>
+        </section>
+        <section class="row">>
+            <h2 class="content__title">Ação e aventura</h2>
+            <section id= "childish-action-movies" class="content content__list">
+            </section>
+            <div class="next" onclick="scrollPrev()"><i class="fas fa-angle-right"></i></div>
+            <div class="prev" onclick="scrollPrev()"> <i class="fas fa-angle-left"></i></div>
+        </section>
+        <section class="row">
+            <h2 class="content__title">Séries educativas</h2>
+            <section id= "childish-educational-series" class="content content__list">
+            </section>
+            <div class="next" onclick="scrollPrev()"><i class="fas fa-angle-right"></i></div>
+            <div class="prev" onclick="scrollPrev()"> <i class="fas fa-angle-left"></i></div>
+        </section>    
+        <section class="row">
+            <h2 class="content__title">Filmes e séries para crianças mais velhas</h2>
+            <section id= "childish-movies-series" class="content content__list">
+            </section>
+            <div class="next" onclick="scrollPrev()"><i class="fas fa-angle-right"></i></div>
+            <div class="prev" onclick="scrollPrev()"> <i class="fas fa-angle-left"></i></div>
+        </section>
+        <section class="row">
+            <h2 class="content__title">Animações</h2>
+            <section id="childish-animations" class="content content__list">
+            </section>
+            <div class="next" onclick="scrollPrev()"><i class="fas fa-angle-right"></i></div>
+            <div class="prev" onclick="scrollPrev()"> <i class="fas fa-angle-left"></i></div>
+        </section>
+
         <script src="../urlsCarousel.js"></script>
         <script src="../api.js"></script>
         <script src="childish.js"></script>

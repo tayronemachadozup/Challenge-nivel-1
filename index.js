@@ -42,27 +42,22 @@ function search() {
       const url = generateMovieDBUrl('/search/multi?')+`&query=${value}`;
       if(arrSearch){
         localStorage.removeItem('search-result');
-        console.log('Foi apagado');
       }
-      console.log('O array não exites e passou na Verificação');
-      requestApi('search-result',url);
-      //window.location.href = './search/search.html';
+      requestApi('search-result',url,function(){
+        window.location.href = './search/search.html';
+      });
     }
   });
 }
 
 function scrollNext(element){
-  if (element === 'coming-up') 
-    comingUpElement.classList.add('scroll__next');
-  if (element === 'amazon-originals')
-    amazonOriginalsElement.classList.add('scroll__next'); 
+    const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
+    ulElement.scrollLeft += 200
 }
 
 function scrollPrev(element){
-  if (element === 'coming-up' ) 
-    comingUpElement.classList.add('scroll__prev');
-  if (element === 'amazon-originals')
-    amazonOriginalsElement.classList.add('scroll__prev'); 
+  const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
+  ulElement.scrollLeft -= 200
 }
 
 //API Transitions
