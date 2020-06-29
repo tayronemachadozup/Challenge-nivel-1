@@ -51,6 +51,20 @@ function search() {
   });
 }
 
+function scrollNext(element){
+  if (element === 'coming-up') 
+    comingUpElement.classList.add('scroll__next');
+  if (element === 'amazon-originals')
+    amazonOriginalsElement.classList.add('scroll__next'); 
+}
+
+function scrollPrev(element){
+  if (element === 'coming-up' ) 
+    comingUpElement.classList.add('scroll__prev');
+  if (element === 'amazon-originals')
+    amazonOriginalsElement.classList.add('scroll__prev'); 
+}
+
 //API Transitions
 function getWatchNext(){
   handleRequest('/search/trending?','Watch-Next',comingUpElement);

@@ -80,9 +80,6 @@ body{
     margin-right: 30px;
 }
 
-
-
-
 .next, .prev{
     position: absolute;
     top: 0;
@@ -97,11 +94,6 @@ body{
 .next{
     right: 0;
 }
-
-
-
-
-
 
 
 .carousel{
@@ -147,24 +139,25 @@ body{
     background-color: #717171;
 }
 
-
-
-
+.row{
+    width: 100%;
+    position: relative;
+}
 
 .content{
     padding: 20px 0px 0px 50px; 
 }
 .content__title{
+    
     color: #ffff;
 }
 .content__list{
+    padding: 20px 0px 0px 50px; 
     position: relative;
     display: flex;
     width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    
-   
+    /*overflow-x: scroll;*/
+  
 }
 
 .content__list__carousel{
@@ -187,7 +180,14 @@ body{
     border-radius: 5px;
 }
 
-
+.scroll__next{
+    transform: translate3d(-1200px,0,0);
+    animation-duration: 6s;
+}
+.scroll__prev{
+    transform: translate3d(0,200px,0);
+    animation-duration: 6s;
+}
 
 
 
