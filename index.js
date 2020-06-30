@@ -44,20 +44,20 @@ function search() {
         localStorage.removeItem('search-result');
       }
       requestApi('search-result',url,function(){
-        window.location.href = './search/search.html';
+        //window.location.href = './search/search.html';
       });
     }
   });
 }
 
 function scrollNext(element){
-    const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
+  const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
     ulElement.scrollLeft += 200
 }
 
 function scrollPrev(element){
   const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
-  ulElement.scrollLeft -= 200
+    ulElement.scrollLeft -= 200
 }
 
 //API Transitions

@@ -7,13 +7,29 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 24px 0px 16px 0px;
+    padding: 24px 8px 16px 8px;
     margin-bottom: 1px solid #c0c0c0;
 }
 .search__info:last-child{
     border-bottom:1px solid #c0c0c0;
 }
 
+.search__info__botton{
+    width: 100px;
+    height: 40px;
+    background-color: #425265;
+    border: none;
+    border-radius: 5px;
+}
+.search__info__result{
+
+}
+.search__info__result--text{
+    color: #ffffff;
+}
+.search__info__botton:hover{
+    color: #899bb1;
+}
 
 .search__results{
     padding: 10px 20px 0px 20px;

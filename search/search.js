@@ -1,12 +1,9 @@
 const resultsElement = document.querySelector('#search-results');
-
-const arrResults = getToStorage('search-result');
-
-console.log('Foi chamado', arrResults);
+const infoResultsElement = document.querySelector('#info-results')
+const data = getToStorage('search-result');
 
 function renderResults(){
-    const data = getToStorage('search-result');
-    console.log(' Resultados do array que a search vai pegar :',data);
+    
     const results = `
         <ul class="search__results__list">
             ${data.results.map(movie => `
@@ -16,4 +13,14 @@ function renderResults(){
    resultsElement.innerHTML = results;
 }
 
+function getInfoResults(data){
+    const info = `
+        <p class="search__info__result--text"> ${data.total_results} resultado(s) para "Query" </p>
+    `
+    infoResultsElement.innerHTML = info;
+}
+
+
+
 renderResults();
+getInfoResults(data);

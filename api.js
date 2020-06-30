@@ -12,7 +12,7 @@ function generateMovieDBUrl(path) {
   return url;
 }
   
-function requestApi(type,url,callback) {
+function requestApi(type,url,callback) { 
   return fetch(url)
     .then((res) => res.json())
     .then((data) => {
