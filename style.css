@@ -81,6 +81,9 @@ body{
 }
 
 .next, .prev{
+    height: 333px;
+    background-color: black;
+    opacity: 0.3;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -90,6 +93,7 @@ body{
     padding: 0px 10px 0px 10px;
     color: #ffff;
     cursor: pointer;
+
 }
 .next{
     right: 0;
@@ -138,21 +142,19 @@ body{
 .carousel__pointer--active{
     background-color: #717171;
 }
-
+.title{
+    padding: 20px 0px 0px 50px; 
+    color: #ffff;
+}
 .row{
     width: 100%;
     position: relative;
 }
 
-.content{
-    padding: 20px 0px 0px 50px; 
-}
-.content__title{
-    padding: 20px 0px 0px 50px; 
-    color: #ffff;
-}
+
+
 .content__list{
-    padding: 20px 0px 0px 50px; 
+    padding: 0px 0px 0px 50px; 
     position: relative;
     display: flex;
     width: 100%; 
