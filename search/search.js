@@ -13,9 +13,9 @@ function renderResults(){
    resultsElement.innerHTML = results;
 }
 
-function getInfoResults(data){
+function getInfoResults(data,name){
     const info = `
-        <p class="search__info__result--text"> ${data.total_results} resultado(s) para "Query" </p>
+        <p class="search__info__result--text"> ${data.total_results} resultado(s) para ${name.variavel} </p>
     `
     infoResultsElement.innerHTML = info;
 }

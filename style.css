@@ -79,26 +79,10 @@ body{
     color: #bbbdc0;
     margin-right: 30px;
 }
-
-.next, .prev{
-    height: 333px;
-    background-color: black;
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    padding: 0px 10px 0px 10px;
-    color: #ffff;
-    cursor: pointer;
-
+.navbar__user__info{
+    position: relative;
+    
 }
-.next{
-    right: 0;
-}
-
 
 .carousel{
     width: 100%;
@@ -118,7 +102,6 @@ body{
 .carousel__img{
     width:100%;
     vertical-align: middle;
-   
 }
 
 .carousel__pointer{
@@ -142,6 +125,28 @@ body{
 .carousel__pointer--active{
     background-color: #717171;
 }
+
+
+.next, .prev{
+    height: 333px;
+    background-color: black;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding: 0px 10px 0px 10px;
+    color: #ffff;
+    cursor: pointer;
+
+}
+.next{
+    right: 0;
+}
+
+
 .title{
     padding: 20px 0px 0px 50px; 
     color: #ffff;
@@ -163,7 +168,7 @@ body{
 .content__list__carousel{
     list-style: none;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: hidden;
     white-space: nowrap;
 }
 

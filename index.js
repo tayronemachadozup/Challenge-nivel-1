@@ -44,7 +44,7 @@ function search() {
         localStorage.removeItem('search-result');
       }
       requestApi('search-result',url,function(){
-        //window.location.href = './search/search.html';
+        window.location.href = './search/search.html';
       });
     }
   });

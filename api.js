@@ -39,7 +39,7 @@ function renderContent(point,data) {
 }
   
 function renderEndpoint(element){
-    return element;
+  return element;
 }
 
 async function handleRequest(path,type,element){
