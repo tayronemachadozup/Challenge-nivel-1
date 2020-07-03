@@ -1,9 +1,14 @@
+const inputElement = document.querySelector('#search-input');
 const resultsElement = document.querySelector('#search-results');
 const infoResultsElement = document.querySelector('#info-results')
 const data = getToStorage('search-result');
+const query = getToStorage('query-value');
+
+function returnInputValue(queryValue){
+    inputElement.value = queryValue;
+}
 
 function renderResults(){
-    
     const results = `
         <ul class="search__results__list">
             ${data.results.map(movie => `
@@ -13,14 +18,14 @@ function renderResults(){
    resultsElement.innerHTML = results;
 }
 
-function getInfoResults(data,name){
+function getInfoResults(data,queryValue){
     const info = `
-        <p class="search__info__result--text"> ${data.total_results} resultado(s) para ${name.variavel} </p>
+        <p class="search__info__result--text"> ${data.total_results} resultado(s) para "${queryValue}" </p>
     `
     infoResultsElement.innerHTML = info;
 }
 
 
-
+returnInputValue(query);
+getInfoResults(data,query);
 renderResults();
-getInfoResults(data);
