@@ -150,6 +150,7 @@ body{
 .title{
     padding: 20px 0px 0px 50px; 
     color: #ffff;
+    transition: 0.5s;
 }
 .row{
     width: 100%;

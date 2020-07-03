@@ -1,3 +1,4 @@
+const inputElement = document.querySelector('#search-input');
 const carouselElement = document.querySelector('#slideshow');
 
 const comingUpElement = document.querySelector('#coming-up'); 

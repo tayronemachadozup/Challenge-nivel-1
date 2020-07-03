@@ -1,3 +1,4 @@
+const inputElement = document.querySelector('#search-input');
 const carouselElement = document.querySelector('#slideshow');
 
 const amazonOriginalsElement = document.querySelector('#childish-amazon-originals'); 

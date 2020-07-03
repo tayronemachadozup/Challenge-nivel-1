@@ -1,3 +1,4 @@
+const inputElement = document.querySelector('#search-input');
 const carouselElement = document.querySelector('#slideshow');
 
 const comingUpElement = document.querySelector('#movies-coming-up');
@@ -41,5 +42,5 @@ getBestMovies();
 getThrillerMovies();
 getDramaMovies();
 
-
+search();
 renderCarousel(moviesCarousel,carouselElement);

@@ -34,31 +34,9 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
-function search() {
-  let arrSearch = getToStorage('search-result');
-  inputElement.addEventListener("keypress", event => {
-    let value = event.target.value.toLowerCase();
-    if(event.which == 13){
-      const url = generateMovieDBUrl('/search/multi?')+`&query=${value}`;
-      if(arrSearch){
-        localStorage.removeItem('search-result');
-      }
-      requestApi('search-result',url,function(){
-        window.location.href = './search/search.html';
-      });
-    }
-  });
-}
 
-function scrollNext(element){
-  const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
-    ulElement.scrollLeft += 200
-}
 
-function scrollPrev(element){
-  const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
-    ulElement.scrollLeft -= 200
-}
+
 
 //API Transitions
 function getWatchNext(){

@@ -6,6 +6,24 @@ const MovieDbPath = 'https://api.themoviedb.org';
 const IMG_URL = 'https://image.tmdb.org/t/p/w1920_and_h600_multi_faces';
 const IMG_URL_List = 'https://image.tmdb.org/t/p/w220_and_h330_face/';
 
+
+function search() {
+  let arrSearch = getToStorage('search-result');
+  inputElement.addEventListener("keypress", event => {
+    let value = event.target.value.toLowerCase();
+    saveToStorage('query-value',value);
+    if(event.which == 13){
+      const url = generateMovieDBUrl('/search/multi?')+`&query=${value}`;
+      if(arrSearch){
+        localStorage.removeItem('search-result');
+      }
+      requestApi('search-result',url,function(){
+        window.location.href = './search/search.html';
+      });
+    }
+  });
+}
+
 //API URL
 function generateMovieDBUrl(path) {
   const url = `${MovieDbPath}/3${path}api_key=${ApiKEY}&page=2&language=pt-BR`;
@@ -27,21 +45,6 @@ function requestApi(type,url,callback) {
     });
 }
 
-function renderContent(point,data) {
-  const list = `
-    <ul class="content__list__carousel">
-        ${data.results.map(movie => `
-        <li class="content__list__carousel__folder"><img class ="img__folder" src="${IMG_URL_List + movie.poster_path}"></li>
-        `).join('')}
-    </ul>        
-  `;
-  renderEndpoint(point).innerHTML = list;
-}
-  
-function renderEndpoint(element){
-  return element;
-}
-
 async function handleRequest(path,type,element){
   try{
     let data = getToStorage(type);
@@ -57,6 +60,21 @@ async function handleRequest(path,type,element){
   }
 }
 
+function renderContent(point,data) {
+  const list = `
+    <ul class="content__list__carousel">
+        ${data.results.map(movie => `
+        <li class="content__list__carousel__folder"><img class ="img__folder" src="${IMG_URL_List + movie.poster_path}"></li>
+        `).join('')}
+    </ul>        
+  `;
+  renderEndpoint(point).innerHTML = list;
+}
+  
+function renderEndpoint(element){
+  return element;
+}
+
 function renderCarousel(arrMovies,element) {
   const carousel = `
     <ul class="carousel__slideshow">
@@ -69,7 +87,15 @@ function renderCarousel(arrMovies,element) {
     element.innerHTML = carousel;
 }
 
+function scrollNext(element){
+  const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
+    ulElement.scrollLeft += 1200
+}
 
+function scrollPrev(element){
+  const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]
+    ulElement.scrollLeft -= 1100
+}
 
 function saveToStorage(arrName,data){
   localStorage.setItem(arrName, JSON.stringify(data));
