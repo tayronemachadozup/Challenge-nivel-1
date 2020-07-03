@@ -20,7 +20,7 @@ function renderResults(){
 
 function getInfoResults(data,queryValue){
     const info = `
-        <p class="search__info__result--text"> ${data.total_results} resultado(s) para "${queryValue}" </p>
+        <p class="search__info--text"> ${data.total_results} resultado(s) para "${queryValue}" </p>
     `
     infoResultsElement.innerHTML = info;
 }
