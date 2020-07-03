@@ -42,5 +42,6 @@ getBestSeries();
 getThrillerSeries();
 getDramaSeries();
 
+search();
 renderCarousel(seriesCarousel,carouselElement);
   

@@ -42,7 +42,9 @@ getEducationalSeries();
 // getMoviesSeries();
 getAnimations();
 
- 
+search();
+
+
  //https://www.themoviedb.org/search/remote/tv_network?take=50&skip=0&page=1&
  
 //https://api.themoviedb.org/3/discover/tv?with_genres=10762&with_genres=10759&api_key=9c5c64f28ef6b06c9548ba6f6077905a&page=2
