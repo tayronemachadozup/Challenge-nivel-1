@@ -181,7 +181,7 @@ body{
     list-style: none;
     display: flex;
     overflow-x: hidden;
-    overflow-y: ;
+    
     white-space: nowrap;
 }
 
@@ -204,9 +204,61 @@ body{
 
     position: relative;
     z-index: 2;
-    transform: scale(1.5);
-   
+   /* transform: scale(1.2, 1.4);*/
+  
 }
+
+
+
+.carousel__item{
+    width: 100%;
+    height: 80px;
+    border: 1px solid #fff;
+}
+.carousel__item__info{
+    color: #ffff;
+    text-align: left;
+    overflow: hidden;
+}
+
+.icon{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon__play, .icon__add{
+    color: #ffff;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 25px;
+}
+
+
+.desc__title{
+    color: #ffff;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+.description__list{
+    list-style: none;
+    display:flex;
+    color: #ffff;
+}
+
+.description__list__item{
+    color: #ffff;
+}
+
+
+.color{
+    color: #ffff;
+}
+
+
+
+
+
 /*
 .content__box{
     display: none;

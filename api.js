@@ -65,7 +65,26 @@ function renderContent(point,data) {
   const list = `
     <ul class="content__list__carousel">
         ${data.results.map(movie => `
-        <li class="content__list__carousel__folder"><img class ="img__folder" src="${IMG_URL_List + movie.poster_path}"></li>
+        <li class="content__list__carousel__folder">
+          <div><img class ="img__folder" src="${IMG_URL_List + movie.poster_path}"></div>
+         
+          <div class="icon">
+            <div class="icon__play"><i class="far fa-play-circle"></i> </div>
+            <div class="icon__add"><i class="fas fa-plus"></i></div>
+          </div>
+          
+          <h3 class="desc__title">${checkTitle(movie)}</h3>
+          <div class="carousel__item">
+           <p class="carousel__item__info">${movie.overview}</p>
+            
+          </div>
+          <ul class="description__list">
+              <li class="description__list__item>
+                <i class="fas fa-plus"></i>${movie.popularity}
+              <li>
+          </ul>
+        
+        </li>
         `).join('')}
     </ul>        
   `;
@@ -74,6 +93,13 @@ function renderContent(point,data) {
   
 function renderEndpoint(element){
   return element;
+}
+
+function checkTitle(movie){
+  if (movie.title != undefined)
+    return movie.title;
+  else
+    return movie.name;
 }
 
 function renderCarousel(arrMovies,element) {
