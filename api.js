@@ -14,6 +14,7 @@ function search() {
     saveToStorage('query-value',value);
     if(event.which == 13){
       const url = generateMovieDBUrl('/search/multi?')+`&query=${value}`;
+
       if(arrSearch){
         localStorage.removeItem('search-result');
       }

@@ -9,10 +9,11 @@
     </head>
     <body>
         <header class="navbar">
-            <div class="navbar__logo">
-                <h1><img src="./assets/prime-brand.png" alt="Amazon-prime-brand"></h1>
+            <div class="navbar__brand">
+                <h1><img class="navbar__brand__img" src="./assets/prime-brand.png" alt="Amazon-prime-brand"></h1>
             </div>
-            <nav class="navbar__menu">
+            <a id="routes-icon" class="navbar__mobile" onclick="openSidebar()"> <i class="fas fa-align-justify fa-2x"></i></a>
+            <nav class="navbar__menu" hidden>
                 <ul>
                     <li class="navbar__menu__items"><a class ="navbar__menu--route" href="index.html"> Início</a></li>
                     <li class="navbar__menu__items"><a class ="navbar__menu--route" href="./series/series.html">Séries</a></li>
@@ -27,13 +28,13 @@
             <div class="navbar__user">
                 <i class="far fa-user" ></i>
                 <i class="fas fa-caret-down"></i>
-                <div hidden id ="nav-user-info" class="navbar__user__info">
-                    <ul>
-                        <li>Sua Lista</li>
-                        <li>Conta e configurações/li>
-                        <li>Assita onde quiser</li>
-                        <li>Ajuda</li>
-                        <li>Não é Tayrone? Sair</li>
+                <div id ="nav-user-info" class="navbar__user__info">
+                    <ul class="info__list">
+                        <li class="info__list__item">Sua Lista</li>
+                        <li class="info__list__item">Conta e configurações</li>
+                        <li class="info__list__item">Assita onde quiser</li>
+                        <li class="info__list__item">Ajuda</li>
+                        <li class="info__list__item">Não é Tayrone? Sair</li>
                     </ul>
                 </div>
             </div>
