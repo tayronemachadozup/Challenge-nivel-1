@@ -12,7 +12,12 @@ function renderResults(){
     const results = `
         <ul class="search__results__list">
             ${data.results.map(movie => `
-            <li class="search__results__list__items"><img class ="img__folder" src="${IMG_URL_List + movie.poster_path}"></li>
+            <li class="search__results__list__items">
+                <img class ="img__folder" src="${IMG_URL_List + movie.poster_path}">
+                <div class="items__info">
+                  <h5>Nome</h5>
+                </div>
+            </li>
     ` ).join('')}    
    `
    resultsElement.innerHTML = results;

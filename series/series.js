@@ -1,5 +1,5 @@
 const inputElement = document.querySelector('#search-input');
-const carouselElement = document.querySelector('#slideshow');
+const carouselElement = document.querySelector('#slideshow-list');
 
 const comingUpElement = document.querySelector('#coming-up'); 
 const amazonOriginalsElement = document.querySelector('#amazon-originals');
@@ -42,6 +42,6 @@ getBestSeries();
 getThrillerSeries();
 getDramaSeries();
 
-search(series);
+search();
 renderCarousel(seriesCarousel,carouselElement);
   

@@ -30,15 +30,14 @@
           </div>
         </header>
         <section class="carousel">
-            <div id="slideshow"></div>
-            <div class="next" onclick="plusSlides(1)"><i class="fas fa-angle-right"></i></div>
-            <div class="prev" onclick="plusSlides(-1)"> <i class="fas fa-angle-left"></i></div>
+            <div class="slideshow">
+                <ul id ="slideshow-list" class="slideshow__list"></ul>            
+            </div>
+            <div class="next" onclick="slideNext('slideshow-list')"><i class="fas fa-angle-right"></i></div>
+            <div class="prev" onclick="slidePrev('slideshow-list')"> <i class="fas fa-angle-left"></i></div>
         </section>
-        <div class="carousel__pointer">
-            <span class="carousel__pointer--dot" onclick="currentSlide(1)"></span> 
-            <span class="carousel__pointer--dot" onclick="currentSlide(2)"></span> 
-            <span class="carousel__pointer--dot" onclick="currentSlide(3)"></span>
-        </div>
+
+     
 
         <h2 class="title">Próximas séries para assistir</h2>
         <section class="row">

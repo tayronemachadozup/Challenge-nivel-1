@@ -1,3 +1,5 @@
+let activeFolder = 0;
+
 //API PATCH
 const ApiKEY = '9c5c64f28ef6b06c9548ba6f6077905a';
 const MovieDbPath = 'https://api.themoviedb.org';
@@ -68,22 +70,22 @@ function renderContent(point,data) {
         <li class="content__list__carousel__folder">
           <div><img class ="img__folder" src="${IMG_URL_List + movie.poster_path}"></div>
          
-          <div class="icon">
-            <div class="icon__play"><i class="far fa-play-circle"></i> </div>
-            <div class="icon__add"><i class="fas fa-plus"></i></div>
-          </div>
-          
-          <h3 class="desc__title">${checkTitle(movie)}</h3>
-          <div class="carousel__item">
-           <p class="carousel__item__info">${movie.overview}</p>
+          <div class ="carousel__info">
+            <div class="icon">
+              <div class="icon__play"><i class="far fa-play-circle"></i> </div>
+              <div class="icon__add"><i class="fas fa-plus"></i></div>
+            </div>
             
+            <h3 class="desc__title">${checkTitle(movie)}</h3>
+            <div class="carousel__item">
+              <p class="carousel__item__info">${movie.overview}</p>
+            </div>
+            <ul class="description__list">
+                <li class="description__list__item>
+                  <i class="fas fa-plus"></i>${movie.popularity}
+                <li>
+            </ul>
           </div>
-          <ul class="description__list">
-              <li class="description__list__item>
-                <i class="fas fa-plus"></i>${movie.popularity}
-              <li>
-          </ul>
-        
         </li>
         `).join('')}
     </ul>        
@@ -104,15 +106,31 @@ function checkTitle(movie){
 
 function renderCarousel(arrMovies,element) {
   const carousel = `
-    <ul class="carousel__slideshow">
         ${arrMovies.map(movie => `
-        <li class="carousel__slideshow__img"><img class ="carousel__img" src="${IMG_URL + movie.poster_path}"></li>
+        <li><img class ="slideshow__list__img" src="${IMG_URL + movie.poster_path}"></li>
         `).join('')
-      }
-    </ul>        
+      }      
     `;
     element.innerHTML = carousel;
 }
+
+function slideNext(element){
+  
+    activeFolder++;
+  
+  const endpoint = document.getElementById(element);
+      endpoint.style.setProperty('--trasitionX',-activeFolder);
+
+}
+
+function slidePrev(element){
+  if(activeFolder != 0)
+      activeFolder--;
+
+  const endpoint = document.getElementById(element);
+      endpoint.style.setProperty('--trasitionX',-activeFolder);   
+}
+
 
 function scrollNext(element){
   const ulElement = document.getElementById(element).getElementsByTagName("ul")[0]

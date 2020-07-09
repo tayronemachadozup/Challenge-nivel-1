@@ -1,4 +1,4 @@
-const carouselElement = document.querySelector('#slideshow');
+const carouselElement = document.querySelector('#slideshow-list');
 const inputElement = document.querySelector('#search-input');
 
 const comingUpElement = document.querySelector('#coming-up');
@@ -7,32 +7,6 @@ const moviesLikeElement = document.querySelector('#movies-like');
 const addedMoviesElement =document.querySelector('#movies-added');
 const moviesThrillerElement = document.querySelector('#thriller-movie');
 const addedSeriesElement =document.querySelector('#series-added');
-
-var slideIndex = 1;
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("carousel__slideshow__img");
-  let dots = document.getElementsByClassName("carousel__pointer--dot");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace("active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
 
 
 
@@ -74,6 +48,5 @@ getSeriesAdded ();
 
 renderCarousel(indexCarousel,carouselElement);
 search();
-showSlides(slideIndex);
 
 

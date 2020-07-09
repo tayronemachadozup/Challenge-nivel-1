@@ -51,10 +51,10 @@ const moviesCarousel = [
 
 const childishCarousel = [
     {
-        "poster_path": "/6LfVuZBiOOCtqch5Ukspjb9y0EB.jpg"
+        "poster_path": "/qsxhnirlp7y4Ae9bd11oYJSX59j.jpg"
     },
     {
-        "poster_path": "/qsxhnirlp7y4Ae9bd11oYJSX59j.jpg"
+        "poster_path": "/6LfVuZBiOOCtqch5Ukspjb9y0EB.jpg"
     },
     {
         "poster_path": "/bcT8CaBIj086WVD7K529h78eujb.jpg"

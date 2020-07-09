@@ -1,5 +1,5 @@
 const inputElement = document.querySelector('#search-input');
-const carouselElement = document.querySelector('#slideshow');
+const carouselElement = document.querySelector('#slideshow-list');
 
 const amazonOriginalsElement = document.querySelector('#childish-amazon-originals'); 
 const bestMoviesElement = document.querySelector('#childish-best-movies');
@@ -18,7 +18,7 @@ function getBestMovies(){
 }
 
 function getActionMovies(){
-    handleRequest('','',);
+    handleRequest('discover/tv?with_genres=16&','kids-action-adventure',actionMoviesElement); // repete
 }
 
 function getEducationalSeries(){
@@ -26,7 +26,7 @@ function getEducationalSeries(){
 }
 
 function getMoviesSeries(){
-    handleRequest('','',);
+    handleRequest('/discover/tv?with_genres=10762&','kids-movies-series',moviesSeriesElement);//repete
 }
   
 function getAnimations(){
@@ -37,13 +37,14 @@ function getAnimations(){
 //Getters
 getAmazonOriginals();
 getBestMovies();
-// getActionMovies();
+getActionMovies();
 getEducationalSeries();
-// getMoviesSeries();
+getMoviesSeries();
 getAnimations();
 
 search();
 
+renderCarousel(childishCarousel,carouselElement)
 
  //https://www.themoviedb.org/search/remote/tv_network?take=50&skip=0&page=1&
  

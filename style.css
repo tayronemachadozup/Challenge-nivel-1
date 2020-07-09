@@ -102,19 +102,33 @@ body{
 
 .carousel{
     width: 100%;
-    height: 300px;
+    position: relative;
     overflow: hidden;
+}
+
+.slideshow{
+    width: 100%;
+    height: 300px;
+    padding: 20px 0px 20px 0px;
     position: relative;
 }
 
-.carousel__slideshow__img{
-    display: none;
+.slideshow__list{
+    list-style: none;
+    display: flex;
+    white-space: nowrap;
+    transform: translateX(calc(var(--trasitionX)*100%));
+    transition: transform .5s ease;
+   
 }
 
-.carousel__img{
-   width: 100%;
-   max-height: 300px;
+.slideshow__list__img{
+    width: 1270px;
+    height: 300px;
 }
+
+
+
 
 .carousel__pointer{
     display: flex;
@@ -181,8 +195,8 @@ body{
     list-style: none;
     display: flex;
     overflow-x: hidden;
+    white-space: wrap;
     
-    white-space: nowrap;
 }
 
 .content__list__carousel__folder{
@@ -201,11 +215,15 @@ body{
 
 
 .content__list__carousel__folder:hover{
-
-    position: relative;
-    z-index: 2;
-   /* transform: scale(1.2, 1.4);*/
+    transform: scale(1.1);
   
+}
+.carousel__info{
+    display: none;
+}
+
+.content__list__carousel__folder:hover .carousel__info{
+    display: block;
 }
 
 
@@ -217,8 +235,9 @@ body{
 }
 .carousel__item__info{
     color: #ffff;
-    text-align: left;
-    overflow: hidden;
+    text-align: justify;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
 }
 
 .icon{

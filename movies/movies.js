@@ -1,5 +1,5 @@
 const inputElement = document.querySelector('#search-input');
-const carouselElement = document.querySelector('#slideshow');
+const carouselElement = document.querySelector('#slideshow-list');
 
 const comingUpElement = document.querySelector('#movies-coming-up');
 const amazonOriginalsElement = document.querySelector('#movies-amazon-originals'); 
